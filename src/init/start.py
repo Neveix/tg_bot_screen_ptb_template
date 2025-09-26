@@ -20,7 +20,7 @@ async def start(update: Update, _):
     await start_inner(user_id)
 
 async def start_inner(user_id: int):  
-    if botm.config.development_mode and         user_id not in botm.config.admin_list:
+    if botm.config.development_mode and user_id not in botm.config.admin_list:
         print(f"{user_id} написал /start и не был допущен [development mode]")
         return
     

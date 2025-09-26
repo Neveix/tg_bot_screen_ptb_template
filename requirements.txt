@@ -1,0 +1,2 @@
+tg-bot-screen
+python-telegram-bot==22.4

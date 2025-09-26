@@ -11,7 +11,7 @@ class BotManager(BaseBotManager):
         self.config = ConfigManager()
         self.config.load()
         
-        self.start_inner: Callable = None
+        self.start_inner: Callable | None = None
     
     def get_user_data(self, user_id: int):
         return self.user_data_m.get(user_id)
@@ -20,4 +20,5 @@ class BotManager(BaseBotManager):
         self.user_data_m.reset(user_id)
         
     async def mapping_key_error(self, user_id: int):
-        await self.start_inner(user_id)
+        if self.start_inner:
+            await self.start_inner(user_id)
