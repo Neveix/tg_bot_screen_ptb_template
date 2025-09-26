@@ -12,5 +12,6 @@ botm.start_inner = start_inner
 application.add_handler(CommandHandler("start", start), 0)
 botm.add_handlers()
 
-print("Запрашивание...")
-application.run_polling(0.1)
+def run():
+    print("Запрашивание...")
+    application.run_polling(0.1)
