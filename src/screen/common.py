@@ -73,9 +73,3 @@ def simple_multi_screen(text: str, has_step_back = True, parse_mode: str = None,
     msgs = [SimpleMessage(text, parse_mode=parse_mode) for text in texts]
     msgs[-1].button_rows = button_rows
     return msgs
-
-@botm.dynamic_screen()
-async def screen_error_screen(user_id: int, **kwargs):
-    user_data = botm.get_user_data(user_id)
-    return [SimpleMessage(f"😔 Ошибка: {user_data.last_error}",
-            ButtonRows(step_back_button_row()))]

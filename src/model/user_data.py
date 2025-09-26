@@ -1,6 +1,6 @@
 class UserData:
     def __init__(self):
-        self.last_error: str = None 
+        pass
 
 class UserDataManager:
     def __init__(self):
